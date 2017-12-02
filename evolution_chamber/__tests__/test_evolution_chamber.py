@@ -1,6 +1,6 @@
 from nose.tools import ok_, eq_
 
-from src.evolution_chamber import EvolutionChamber
+from evolution_chamber.evolution_chamber import EvolutionChamber
 
 
 def test_init():
