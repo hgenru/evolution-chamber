@@ -117,3 +117,17 @@ def test_evolve_survivors():
     eq_(len(second_result.survivors), 2)
     eq_(second_result.survivors[0].score_, 100)
     eq_(second_result.survivors[1].score_, 100)
+
+
+def test_evolve_additional_offspring():
+    evo_chamber = EvolutionChamber(X=X, y=y)
+    evolution_iter = evo_chamber.evolve(
+        [Winner(), Winner()],
+        iteratons=10,
+        limit_individuals=2,
+        probability_additional_offspring=1
+    )
+    first_result = next(evolution_iter)
+    eq_(len(first_result.population), 2)
+    second_result = next(evolution_iter)
+    eq_(len(second_result.population), 4)
