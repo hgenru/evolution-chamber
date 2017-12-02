@@ -43,6 +43,3 @@ class EvolutionChamber:
         current_X = self._X[0:to]
         current_y = self._y[0:to]
         return train_test_split(current_X, current_y, test_size=test_size)
-
-    def _next_gen(self, individuals, limit):
-        pass
